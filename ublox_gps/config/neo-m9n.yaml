@@ -1,0 +1,30 @@
+ublox_gps_node:
+  ros__parameters:
+    debug: 1
+
+    # path to the device port
+    # device: /dev/ttyACM
+    uart1:
+      baudrate: 38400
+
+    # name prepended to frames
+    # frame_id: m9n
+
+    # measeurement rate
+    rate: 25 # 25hz is max for any combination of constellations
+    # how often nav solutions are published in no. of measurement cycles, in hz
+    # nav_rate:
+
+    # platform configurations
+    dynamic_model: sea # sea: zero vertical velocity & sea level assumed (max alt: 500m, max horiz vel: 25m/s, max vert: 5m/s)
+    fix_mode: 2d
+
+    # time in seconds to use dead reckoning after signal loss
+    dr_limit: 0 # defaults to 0 
+
+    # supported constellations
+    gnss:
+      gps: true
+      glonass: true
+      galileo: true
+      beidou: true
